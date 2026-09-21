@@ -1,0 +1,9 @@
+[
+  { "team": "platform", "count": 12 },
+  { "team": "mobile", "count": 7 },
+  { "team": "data", "count": 19 },
+  { "team": "platform", "count": 4 },
+  { "team": "mobile", "count": 3 },
+  { "team": "design", "count": 8 },
+  { "team": "data", "count": 6 }
+]
