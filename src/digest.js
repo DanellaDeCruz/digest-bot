@@ -12,7 +12,7 @@ async function main() {
   const rows = JSON.parse(fs.readFileSync(DATA, "utf8"));
   await pause(3000);
 
-  console.log(`[2/4] ${rows.length} records loaded, grouping by team...`);
+  console.log(`[2/4] ${rows.length} user records loaded, grouping by team...`);
   const byTeam = {};
   for (const row of rows) {
     byTeam[row.team] = (byTeam[row.team] || 0) + row.count;

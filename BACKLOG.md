@@ -8,16 +8,23 @@ Self-contained, no external dependencies.
 
 ---
 
-## BL-002 — Add the notification opt-out field to the digest payload
+## BL-002 — Emit the notification payload with each recipient's opt-out status
 **Status:** BLOCKED — waiting on `shared-config`
 
-The digest payload needs to carry the per-user notification opt-out flag so
-downstream consumers can filter recipients.
+Write a second output file, `out/digest.json`, listing one entry per recipient so
+downstream notification consumers can decide who to send to.
 
-**Why this is blocked:** the exact field name is owned by the `shared-config`
-project and is not defined in its `config/fields.json` yet. We must not invent a
-name here — two services guessing different names is exactly the bug this
-convention exists to prevent.
+Each entry carries the user's id, their team, their count, and whether they have
+opted out of notifications. The opt-out value already exists in the input feed —
+`data/reports.json` carries it per user as the local key `opted_out`.
+
+**Why this is blocked:** the *output* key must use the canonical field name owned
+by the `shared-config` project, not our local `opted_out`. Downstream consumers
+read the canonical name. If we emit our local name instead, every consumer
+silently misses the flag and notifies people who opted out.
+
+We must not guess that name here — two services each picking a sensible name for
+the same field is exactly the bug this convention exists to prevent.
 
 **Needs from shared-config:** the canonical field name for "user has opted out of
-notifications", added to `config/fields.json`.
+notifications", defined in its `config/fields.json`.

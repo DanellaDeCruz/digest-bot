@@ -1,9 +1,9 @@
 [
-  { "team": "platform", "count": 12 },
-  { "team": "mobile", "count": 7 },
-  { "team": "data", "count": 19 },
-  { "team": "platform", "count": 4 },
-  { "team": "mobile", "count": 3 },
-  { "team": "design", "count": 8 },
-  { "team": "data", "count": 6 }
+  { "user_id": "u_1041", "team": "platform", "count": 12, "opted_out": false },
+  { "user_id": "u_1077", "team": "mobile",   "count": 7,  "opted_out": true  },
+  { "user_id": "u_1092", "team": "data",     "count": 19, "opted_out": false },
+  { "user_id": "u_1108", "team": "platform", "count": 4,  "opted_out": false },
+  { "user_id": "u_1130", "team": "mobile",   "count": 3,  "opted_out": false },
+  { "user_id": "u_1155", "team": "design",   "count": 8,  "opted_out": true  },
+  { "user_id": "u_1163", "team": "data",     "count": 6,  "opted_out": false }
 ]
